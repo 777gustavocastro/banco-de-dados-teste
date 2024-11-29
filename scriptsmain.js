@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("data/empresas.json")
+  fetch("data/empresas.json") // Busca o JSON da pasta 'data'
     .then((response) => response.json())
     .then((data) => renderEmpresas(data));
 });
