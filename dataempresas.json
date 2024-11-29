@@ -1,26 +1,52 @@
-[
-  {
-    "nome": "Empresa 1",
-    "local": "São Paulo, SP",
-    "setor": "Tecnologia",
-    "contato": "contato@empresa1.com.br",
-    "logo": "empresa1-logo.png",
-    "ativo": true
-  },
-  {
-    "nome": "Empresa 2",
-    "local": "Rio de Janeiro, RJ",
-    "setor": "Educação",
-    "contato": "contato@empresa2.com.br",
-    "logo": "empresa2-logo.png",
-    "ativo": false
-  },
-  {
-    "nome": "Empresa 3",
-    "local": "Belo Horizonte, MG",
-    "setor": "Saúde",
-    "contato": "contato@empresa3.com.br",
-    "logo": "empresa3-logo.png",
-    "ativo": true
-  }
-]
+document.addEventListener("DOMContentLoaded", () => {
+  const empresas = [
+    {
+      "nome": "Empresa 1",
+      "local": "São Paulo, SP",
+      "setor": "Tecnologia",
+      "contato": "contato@empresa1.com.br",
+      "logo": "empresa1-logo.png",
+      "ativo": true
+    },
+    {
+      "nome": "Empresa 2",
+      "local": "Rio de Janeiro, RJ",
+      "setor": "Educação",
+      "contato": "contato@empresa2.com.br",
+      "logo": "empresa2-logo.png",
+      "ativo": false
+    },
+    {
+      "nome": "Empresa 3",
+      "local": "Belo Horizonte, MG",
+      "setor": "Saúde",
+      "contato": "contato@empresa3.com.br",
+      "logo": "empresa3-logo.png",
+      "ativo": true
+    }
+  ];
+  renderEmpresas(empresas);
+});
+
+function renderEmpresas(empresas) {
+  const empresaList = document.getElementById("empresa-list");
+  empresaList.innerHTML = empresas
+    .map(
+      (empresa) => `
+      <div class="card">
+        <img src="images/${empresa.logo}" alt="Logo de ${empresa.nome}">
+        <h2>${empresa.nome}</h2>
+        <p>${empresa.local}</p>
+        <p><strong>Setor:</strong> ${empresa.setor}</p>
+        <p><strong>Contato:</strong> ${empresa.contato}</p>
+        <div class="status">
+          <div class="status-circle ${
+            empresa.ativo ? "status-online" : "status-offline"
+          }"></div>
+          <span>${empresa.ativo ? "No ar" : "Inativa"}</span>
+        </div>
+      </div>
+    `
+    )
+    .join("");
+}
