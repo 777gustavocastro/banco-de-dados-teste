@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Empresa 1",
+    "local": "São Paulo, SP",
+    "setor": "Tecnologia",
+    "contato": "contato@empresa1.com.br",
+    "logo": "empresa1-logo.png",
+    "ativo": true
+  },
+  {
+    "nome": "Empresa 2",
+    "local": "Rio de Janeiro, RJ",
+    "setor": "Educação",
+    "contato": "contato@empresa2.com.br",
+    "logo": "empresa2-logo.png",
+    "ativo": false
+  },
+  {
+    "nome": "Empresa 3",
+    "local": "Belo Horizonte, MG",
+    "setor": "Saúde",
+    "contato": "contato@empresa3.com.br",
+    "logo": "empresa3-logo.png",
+    "ativo": true
+  }
+]
